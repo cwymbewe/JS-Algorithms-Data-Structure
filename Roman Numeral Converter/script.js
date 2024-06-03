@@ -1,12 +1,15 @@
 const userInput = document.getElementById('number');
 const convertBtn = document.getElementById('convert-btn');
-const output = document.querySelector('#output');
+const output = document.getElementById('output');
 
 convertBtn.addEventListener('click', () => {
     if(userInput.value === ""){
         output.innerHTML = `Please enter a valid number;`
     }
-    return output.innerHTML;
+    return output.innerHTML = userInput.value === "" ? 'Please enter a valid number' :
+        userInput.value < 0 ? 'Please enter a number greater than or equal to 1' :
+        userInput.value >4000 ? 'Please enter a number less than or equal to 3999' :
+        converter(userInput.value);
 })
 
 const numeralsLibrary = [
