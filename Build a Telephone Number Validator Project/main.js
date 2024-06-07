@@ -18,7 +18,7 @@ const validFormats = [
     "555-555-5555",
     "(555)555-5555"
 ]
-const regex = /\s?(\d{3}|\(\d{3}\))([\s-])?(\d{3})([\s-])?(\d{4})/
+const regex = /(\s?(\d{3}|\(\d{3}\))([\s-])?(\d{3})([\s-])?(\d{4}))$/
 
 const validate = (str) => {
     const reducedStr = str.replace(regex,"");
