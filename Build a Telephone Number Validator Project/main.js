@@ -4,21 +4,17 @@ const clearBtn = document.getElementById('clear-btn');
 const result = document.getElementById('results-div');
 
 checkBtn.addEventListener('click', () => {
-    let output = "";
     
-    return output = userInput.value.length === 0 ? "Please provide a phone number" : 
+    return userInput.value === "" ? alert("Please provide a phone number") : 
         validateNumber(userInput.value);
 })
 
 const regex = /\s?(\d{3}|\(\d{3}\))([\s-])?(\d{3})([\s-])?(\d{4})/
 
-const validateNumber = (strNumber) => {
-    const reducedFormat = strNumber.reduce(regex,"");
-    const isValid = () => {
-        return reducedFormat === "" || reducedFormat === "1" ? true : false;
-    }
-
-    return result.innerText = isValid ?  `Valid US number: ${strNumber}` : `Invalid US number: ${strNumber}`;
+const validateNumber = (str) => {
+    const reducedStr = str.replace(regex,"");
+    
+    return result.innerHTML = (reducedStr === "" || reducedStr === "1") ?  `Valid US number: ${userInput.value}` : `Invalid US number: ${userInput.value}`;
 } 
 
 
