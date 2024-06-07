@@ -1,4 +1,3 @@
-
 const userInput = document.getElementById('user-input');
 const checkBtn = document.getElementById('check-btn');
 const clearBtn = document.getElementById('clear-btn');
@@ -14,13 +13,12 @@ checkBtn.addEventListener('click', () => {
 const regex = /\s?(\d{3}|\(\d{3}\))([\s-])?(\d{3})([\s-])?(\d{4})/
 
 const validateNumber = (strNumber) => {
-    
+    const reducedFormat = strNumber.reduce(regex,"");
+    const isValid = () => {
+        return reducedFormat === "" || reducedFormat === "1" ? true : false;
+    }
+
+    return result.innerText = isValid ?  `Valid US number: ${strNumber}` : `Invalid US number: ${strNumber}`;
 } 
 
 
-/*
-//TEST REGEX
-const validFormat = ['1 555-555-5555', '1(555) 555-5555', '1(555)555-5555', '1 555 555 5555', '5555555555', '555-555-5555', '(555)555-55655n'];
-const reducedFormat = validFormat.map(el => el.replace(regex,""));
-console.log(reducedFormat);
-*/
