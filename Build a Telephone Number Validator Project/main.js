@@ -27,9 +27,9 @@ const validate = (str) => {
 } 
 
 
-console.log(validateNumber(userInput.value));
-
-clearBtn.addEventListener('click', () => {
+const clearAll = () => {
     result.innerHTML = "";
     userInput.value = "";
-})
+}
+
+clearBtn.addEventListener('click', clearAll);
